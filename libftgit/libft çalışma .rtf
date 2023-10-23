@@ -1,0 +1,219 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-BoldItalic;\f2\fswiss\fcharset0 Helvetica-BoldOblique;
+}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red251\green0\blue7;\red255\green255\blue255;
+\red251\green0\blue7;\red0\green0\blue0;\red255\green255\blue11;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c99893\c12008\c0;\cssrgb\c100000\c100000\c100000\c0;
+\cssrgb\c100000\c12195\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c0;}
+\margl1440\margr1440\vieww50700\viewh25780\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 												                                                      
+\f1\i\b\fs48 \cf2 L\uc0\u304 BFT
+\f0\i0\b0\fs24 \cf0 \
+\
+		
+\f2\i\b\fs36 \cf3 \cb4 memset
+\f1 \cf0 \cb1 : 
+\f0\i0\b0\fs24 Void oldu\uc0\u287 u i\'e7in chara \'e7eviriyoruz. Yeni bir pointer adresi tan\u305 mlay\u305 p onda i\u351 lem yap\u305 yoruz.\
+			** 3 parametre al\uc0\u305 r. (void *b, int c, size_t len)\
+			**Bu fonksiyon genellikle bellek bloklar\uc0\u305 n\u305  s\u305 f\u305 rlamak veya belirli bir de\u287 erle doldurmak i\'e7in kullan\u305 l\u305 r.\
+\
+		\
+		
+\f2\i\b\fs36 \cf5 bzero
+\f1 : 
+\f0\i0\b0\fs26 \cf6 Verilen dizinde n kadar NULL atamas\uc0\u305  yapar.\
+			**2 parametre al\uc0\u305 r. (void *s, size_t n)\
+				\cf7 printf(\'93%c\'94, str[6]) de\uc0\u287 erimizde \'f6ncesine NULL atanm\u305 \u351 sa o indexi g\'f6sterir.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 memcpy
+\f1 :
+\f0\i0\b0\fs26 \cf6  Src\'92yi Dest\'92e kopyalar. Strcpy, string dizilerin kopyalanmas\uc0\u305  i\'e7in kullan\u305 l\u305 rken, memcpy bellek bloklar\u305 n\u305 n kopyalanmas\u305  i\'e7in kullan\u305 l\u305 r.\
+			**3 parametre al\uc0\u305 r. (void *dst, const void *src, size_t len)\
+				\cf7 NULL kontrol\'fc i\'e7in;\
+					if (!dst && !src)\
+						return (0);\
+\
+\
+
+\f2\i\b\fs36 \cf5 		memmove: 
+\f0\i0\b0\fs26 \cf6 Fonksiyonda verilen \'93src\'94 dizisi, d\uc0\u305 \u351 ar\u305 dan girdi\u287 imiz \'93len\'94 uzunlu\u287 unun son say\u305 s\u305 ndan ba\u351 layarak \'93dst\'94 in i\'e7ine \'93len\'94 i birer azaltarak yazd\u305 r\u305 r.(\'c7ak\u305 \u351 malar\u305  \'f6nler.)\
+				\cf7 memmove ile memcpy aras\uc0\u305 ndaki fark; memmove sondan ba\u351 lar, memcpy ba\u351 tan ba\u351 layarak yazar.\
+\
+\
+
+\f2\i\b\fs36 \cf5 		strchr: 
+\f0\i0\b0\fs26 \cf6 Fonksiyonda verilen \'93s\'94 dizisi NULL de\uc0\u287 ilse ve d\u305 \u351 ar\u305 dan girilen \'93c\'94 parametresi varsa \'93c\'94 parametresinden itibaren yazar.\
+			** 2 parametre al\uc0\u305 r. (const char *s, int c)\
+				\cf7 E\uc0\u287 er \'93c\'94 dizisinin i\'e7inde yoksa NULL d\'f6nd\'fcr\'fcr.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strrchr: 
+\f0\i0\b0\fs26 \cf6 Fonksiyonda verilen \'93s\'94 dizisini strlen ile sayd\uc0\u305 r\u305 p geriye do\u287 ru giderek d\u305 \u351 ar\u305 dan girilen parametreye e\u351 itli\u287 ini kontrol eder. E\u351 itse e\u351 itlikten itibaren yazd\u305 r\u305 r.(\'c7ak\u305 \u351 malar\u305  \'f6nler.)\
+\
+\
+		
+\f2\i\b\fs36 \cf5 memchr: 
+\f0\i0\b0\fs26 \cf6 Fonksiyonda verilen \'93s\'94 dizisinde \'93n\'94 kadar ki k\uc0\u305 sma kadar \'93c\'94 varsa \'93c\'94 dahil geri kalan\u305 n\u305  yazd\u305 r\u305 r.\
+			** 3 parametre al\uc0\u305 r. (const void *s, int c, size_t n)\
+				\cf7 Yoksa NULL d\'f6nd\'fcr\'fcr.\
+				memchr, bellek blo\uc0\u287 u i\'e7erisinde arama yaparken; strchr, karakter dizisi i\'e7inde arama yapar.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 memcmp: 
+\f0\i0\b0\fs26 \cf6 \'93s1\'94 ve \'93s2\'94 dizisini \'93n\'94 kadar kar\uc0\u351 \u305 la\u351 t\u305 r\u305 r. Farkl\u305  oldu\u287 u yerde \'93s1\'94 den \'93s2\'94 yi \'e7\u305 kart\u305 r.\
+			** 3 parametre al\uc0\u305 r. (const void *s1, const void *s2, size_t n)\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strncmp: 
+\f0\i0\b0\fs26 \cf6 \'93s1\'94 ve \'93s2\'94 dizisini \'93n\'94 kadar kar\uc0\u351 \u305 la\u351 t\u305 r\u305 r. Farkl\u305  bir karakter bulursa \'93s1\'94 deki karakterin ascii kar\u351 \u305 l\u305 \u287 \u305 n\u305  \'e7\u305 kartarak return eder.\
+			** 3 parametre al\uc0\u305 r. (const void *s1, const void *s2, size_t n)\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strlcat: 
+\f0\i0\b0\fs26 \cf6 \'93dest\'94 ve \'93src\'94 yi boyut kontrol\'fc yaparak (ta\uc0\u351 malar\u305  \'f6nlemek i\'e7in g\'fcvenlik amac\u305 yla) \'93dest\'94 in sonuna \'93src\'94 yi yazd\u305 r\u305 r. (size kadar)\
+			** 3 parametre al\uc0\u305 r. (char *dst, const char *src, size_t n)\
+\
+		\
+		
+\f2\i\b\fs36 \cf5 strlcpy: 
+\f0\i0\b0\fs26 \cf6 size kadar\uc0\u305 n\u305  kopyalar.\
+\
+\
+		\
+		
+\f2\i\b\fs36 \cf5 strnstr:  
+\f0\i0\b0\fs26 \cf6 (\'93Samanl\uc0\u305 kta i\u287 ne aramak.\'94 ) Aranan kelimenin ilk harfi ile arad\u305 \u287 \u305 m\u305 z dizinin ilk harfleri \'f6rt\'fc\u351 ene kadar kontrol eder. \u304 lk harfi \'f6rt\'fc\u351 t\'fc\u287 \'fcnde di\u287 er harfler kontrol edilir. Tam e\u351 le\u351 me sa\u287 land\u305 \u287 \u305 nda bulundu\u287 u adresi d\'f6nd\'fcr\'fcr.(Geri kalan\u305 n tamam\u305 n\u305  d\'f6nd\'fcr\'fcr.)\
+			** 3 parametre al\uc0\u305 r. (const char *haystack, const char *needle, size_t len)\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strdup: 
+\f0\i0\b0\fs26 \cf6 Fonksiyonda verilen \'93s1\'94 dizisinin uzunlu\uc0\u287 unu bulup malloc\'92la bellekte yeni bir yer olu\u351 turup \'93s1\'94 dizisini, yeni olu\u351 turdu\u287 umuz adrese kopyalar. Yeni olu\u351 an de\u287 eri return eder.\
+			* 1 parametre al\uc0\u305 r. (const char *s1)\
+\
+\
+		
+\f2\i\b\fs36 \cf5 calloc: 
+\f0\i0\b0\fs26 \cf6 Malloc\'92la a\'e7t\uc0\u305 \u287 \u305  yere NULL atar.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strrim: 
+\f0\i0\b0\fs26 \cf6  S1 	= Ana dizin \
+				  Set		= K\uc0\u305 rp\u305 lmas\u305  istenen k\u305 s\u305 m\
+				  Start 	= Ana dizinin ba\uc0\u351 lang\u305 \'e7 indexi\
+				  End 	= Ana dizinin biti\uc0\u351  indexi\
+\
+				S1\'92de, set\'92in indexini art\uc0\u305 rarak check eder. E\u287 er uyu\u351 ma sa\u287 lan\u305 rsa s1\'92de uyu\u351 an k\u305 sm\u305  k\u305 rpar.(start indexini de\u287 i\u351 tirir.) Uyu\u351 ma sa\u287 lanmad\u305 \u287 \u305 nda ise s1, end\'92e gider ve ayn\u305  i\u351 lemi son indexten geriye do\u287 ru tekrarlar.(End indexini de\u287 i\u351 tirir.) Uyu\u351 ma sa\u287 lanmad\u305 \u287 \u305 nda trimlemeyi(k\u305 rpmay\u305 ) b\u305 rak\u305 r. Ptr\'92\u305 n(mallocla yeni s1 kadar yer a\'e7\u305 lan) i\'e7ine k\u305 rp\u305 lan s1\'92i yazd\u305 r\u305 r.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 substr: 
+\f0\i0\b0\fs26 \cf6 Verilen \'93s\'94 dizisinin \'93start\'94 de\uc0\u287 erinden ba\u351 lay\u305 p \'93len\'94 kadar\u305 n\u305  yeni bir char * a kopyalar.\
+			** 3 parametre al\uc0\u305 r. (char const *s, unsigned int start, size_t len)\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strjoin: 
+\f0\i0\b0\fs26 \cf6 \'93s1\'94 ve \'93s2\'94 dizisini strlen ile sayd\uc0\u305 rarak +NULL kadar mallocla yer a\'e7arak yeni bir dizi olu\u351 turur. Yeni olu\u351 turdu\u287 u diziye \'f6nce \'93s1\'94 i yazd\u305 r\u305 r. Devam\u305 na \'93s2\'94yi yazd\u305 r\u305 r. Sonuna NULL at\u305 p return eder.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 split: 
+\f0\i0\b0\fs26 \cf6 Girilen tek boyutlu char dizisini, parametredeki (\'f6rnek \'93.\'94, \'93-\'93) karakterlerle ay\uc0\u305 rarak \'e7ift **\'92l\u305  char dizisi yapar. T\'fcm dizi boyunca devam eder. (www.google.com) \'93www\'94, \'93google\'94, \'93com\'94 gibi arg\'fcmanlar\u305  b\'f6ler.\
+				\cf7 (*f) kullanarak fonksiyon i\'e7inde fonksiyon \'e7a\uc0\u287 r\u305 l\u305 r.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 strmapi: 
+\f0\i0\b0\fs26 \cf6 \'93s\'94 dizisinin her bir indexine parametredeki fonksiyon uygulan\uc0\u305 r.\
+			** 2 parametre al\uc0\u305 r. (char const *s, char (*f))\
+				\cf7 Mallocla yer a\'e7\uc0\u305 p yeni bir diziye yazar.\
+\
+		
+\f2\i\b\fs36 \cf5 striteri: 
+\f0\i0\b0\fs26 \cf6 diziye, parametredeki fonksiyon uygulan\uc0\u305 r.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 putchar_fd: 
+\f0\i0\b0\fs26 \cf6 #include <fcntl.h> k\'fct\'fcphanesi ile \'e7a\uc0\u287 \u305 r\u305 l\u305 r. Cat komutu ile g\'f6r\'fcnt\'fclenebilir.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 putstr_fd: 
+\f0\i0\b0\fs26 \cf6 char dizisi tan\uc0\u305 mlay\u305 p i\'e7ine yazd\u305 r\u305 yoruz.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 putendl_fd: 
+\f0\i0\b0\fs26 \cf6 sonuna newline atar.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 itoa: 
+\f0\i0\b0\fs26 \cf6 \'93-123\'94 i\'e7in bir char * a 5 byte\'92l\uc0\u305 k yer a\'e7ar sondan geriye do\u287 ru say\u305 y\u305  kopyalar.\
+			ar	-rc\
+			ar	= ar\uc0\u351 ivleme\
+			r 	= replace\
+			c	= create\
+				\cf7 #ifndef = daha \'f6nce tan\uc0\u305 mlan\u305 p tan\u305 mlanmad\u305 \u287 \u305 n\u305  kontrol eder.\
+				#define = tan\uc0\u305 mlama yapar.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 lstnew: 
+\f0\i0\b0\fs26 \cf6 content ile yeni bir d\'fc\uc0\u287 \'fcm olu\u351 turur ve yeni d\'fc\u287 \'fcm\'fcn adresini d\'f6nd\'fcr\'fcr.\
+		
+\f2\i\b\fs36 \cf5 \
+		\
+		lstadd_front: 
+\f0\i0\b0\fs26 \cf6 new\'92i list\'92in ba\uc0\u351 \u305 na ekler.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 lstsize: 
+\f0\i0\b0\fs26 \cf6 lst listesinin uzunlu\uc0\u287 unu d\'f6nd\'fcr\'fcr.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 lstlast: 
+\f0\i0\b0\fs26 \cf6 lst listesinin son d\'fc\uc0\u287 \'fcm\'fcn\'fc d\'f6nd\'fcr\'fcr.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 lstadd_back: 
+\f0\i0\b0\fs26 \cf6 new\'92i listenin sonuna ekler.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 lstdelone: 
+\f0\i0\b0\fs26 \cf6 gelen lst struct\uc0\u305 n\u305 n contentini del fonksiyonuna g\'f6nderir. Sonra freeler.\
+\
+\
+		
+\f2\i\b\fs36 \cf5 lstclear: 
+\f0\i0\b0\fs26 \cf6 temp bir sonraki contenti g\'f6sterir, delone bir \'f6ncekini freeler sonra devam eder. Listenin sonuna kadar devam eder.
+\f2\i\b\fs36 \cf5  \
+\
+\
+		
+\f0\i0\b0\fs26 \cf6 \
+				\
+				\
+	\
+\
+\
+			
+\fs24 \cf0 \
+\
+\
+		}
