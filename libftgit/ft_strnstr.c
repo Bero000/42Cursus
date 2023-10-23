@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: beeren <beeren@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/06 23:44:57 by beeren            #+#    #+#             */
+/*   Updated: 2023/07/11 21:48:23 by beeren           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	a;
+	size_t	b;
+
+	a = 0;
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	if (len == 0)
+		return (NULL);
+	while (haystack[a] != '\0')
+	{
+		b = 0;
+		while (haystack [a + b] == needle[b] && a + b < len)
+		{
+			if (haystack [a + b] == '\0' && needle[b] == '\0')
+				return ((char *)&haystack[a]);
+			b++;
+		}
+		if (needle[b] == '\0')
+			return ((char *)haystack + a);
+		a++;
+	}
+	return (0);
+}
